@@ -26,7 +26,7 @@ test:ui:
     - npm ci
     # redundant "playwright install" removed as official image already contains browsers
     # Run tests
-    - npm run test:all:chrome
+    - npm test
   artifacts:
     when: always
     paths:

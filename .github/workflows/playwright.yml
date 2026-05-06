@@ -54,7 +54,7 @@ jobs:
         run: npx playwright install-deps chromium
 
       - name: Run Playwright tests
-        run: npm run test:all:chrome -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+        run: npm test -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
       - name: Generate Allure Report
         if: always()
