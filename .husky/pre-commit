@@ -1,0 +1,50 @@
+#!/usr/bin/env sh
+# Husky pre-commit hook
+export PATH="/Users/sshaiakhmedov/.nvm/versions/node/v20.20.1/bin:$PATH"
+
+staged_files=$(git diff --cached --name-only)
+run_ui=false
+run_api=false
+
+for file in $staged_files; do
+  # Identify UI test triggers
+  if echo "$file" | grep -qE "^tests/ui/|^pages/|^components/|^util/fixtures\.ts"; then
+    run_ui=true
+  fi
+  
+  # Identify API test triggers
+  if echo "$file" | grep -qE "^tests/api/"; then
+    run_api=true
+  fi
+done
+# Run lint-staged first to catch formatting and linting errors
+echo "Husky: Running lint-staged..."
+if ! npx lint-staged; then
+  echo "Husky: lint-staged failed. Commit aborted."
+  exit 1
+fi
+
+if [ "$run_ui" = "true" ] || [ "$run_api" = "true" ]; then
+  echo "Husky: Staged changes affect tests. Running typecheck..."
+  if ! npm run typecheck; then
+    echo "Husky: typecheck failed. Commit aborted."
+    exit 1
+  fi
+
+  if [ -n "$HUSKY_SKIP_PLAYWRIGHT" ]; then
+    echo "Husky: HUSKY_SKIP_PLAYWRIGHT is set; skipping npm run test:all:chrome."
+    exit 0
+  fi
+
+  if node scripts/playwright-chromium-ready.mjs; then
+    echo "Husky: Chromium found. Running npm run test:all:chrome..."
+    if ! npm run test:all:chrome; then
+      echo "Husky: Tests failed. Commit aborted."
+      exit 1
+    fi
+  else
+    echo "Husky: Chromium not installed in this environment; skipping full Playwright run."
+    echo "Husky: (typecheck passed). Install locally: npx playwright install chromium"
+    echo "Husky: CI still runs the full suite on push. To force E2E here: unset HUSKY_SKIP_PLAYWRIGHT and install browsers."
+  fi
+fi

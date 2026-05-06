@@ -1,0 +1,11 @@
+node_modules
+allure-results
+allure-report
+playwright-report/
+.env
+test-results/
+.auth/
+dist/
+.cursor/mcp.json
+tmp_ci/
+.DS_Store

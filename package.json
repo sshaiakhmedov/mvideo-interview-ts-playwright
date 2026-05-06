@@ -1,0 +1,57 @@
+{
+  "name": "mvideo-interview-automation",
+  "version": "1.0.0",
+  "description": "Playwright Test Framework (TypeScript)",
+  "main": "index.ts",
+  "type": "module",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "playwright test --project=chrome --project=api --project=fakestore",
+    "test:ui": "playwright test tests/ui --project=chrome",
+    "test:api": "playwright test tests/api --project=api --project=fakestore",
+    "spec": "node scripts/run-chrome-spec.mjs",
+    "test:docker": "./run-tests.sh",
+    "test:headed": "playwright test --headed",
+    "allure": "allure generate ./allure-results --clean && allure open ./allure-report",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "playwright:chromium-ready": "node scripts/playwright-chromium-ready.mjs",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix"
+    ]
+  },
+  "keywords": [
+    "playwright",
+    "typescript"
+  ],
+  "author": "Suleman Shaiakhmedov",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.52.0",
+    "allure-commandline": "^2.38.1",
+    "dotenv": "^17.3.1",
+    "pg": "^8.20.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/node": "^25.5.0",
+    "@types/pg": "^8.20.0",
+    "allure-playwright": "^2.15.1",
+    "eslint": "^10.1.0",
+    "eslint-plugin-playwright": "^2.10.1",
+    "globals": "^17.4.0",
+    "husky": "^9.1.7",
+    "jiti": "^2.6.1",
+    "lint-staged": "^15.5.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.2"
+  }
+}
