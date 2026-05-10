@@ -1,0 +1,74 @@
+# Test info
+
+- Name: POST /products >> Add new item
+- Location: /home/runner/work/mvideo-interview-ts-playwright/mvideo-interview-ts-playwright/tests/api/fakestore/post.products.spec.ts:28:3
+
+# Error details
+
+```
+Error: Status Mismatch! Expected 200 but got 403.
+Response: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="content-security-policy" content="default-src &#39;none&#39;; script-src &#39;nonce-4j8eDSlSuUhLVQB0kVLoOU&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}#challenge-error-text{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+");background-repeat:no-repeat;background-size:contain;padding-left:34px}</style><meta http-equiv="refresh" content="360"></head><body><div class="main-wrapper" role="main"><div class="main-content"><noscript><div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script nonce="4j8eDSlSuUhLVQB0kVLoOU">(function(){window._cf_chl_opt = {cFPWv: 'g',cH: 'oZuUOpn7kE3XlKLaS6p_.wcs39QqJfbplJL1Er8aa6Q-1778440878-1.2.1.1-ndQ5y88KgMBHmQpPPRLBGrgUmmW7wKM.vB41OfWvnYdm185LODErZBh4_Zb_giV4',cITimeS: '1778440878',cN: '4j8eDSlSuUhLVQB0kVLoOU',cRay: '9f9b4e63595cd301',cTplB: '0',cTplC:0,cTplO:0,cTplV:5,cType: 'managed',cUPMDTk:"/products?__cf_chl_tk=bW1OSoRugeMXD.Lp9.SAWSBKoxLkr4vmtcLTUFZrpDw-1778440878-1.0.1.1-bcDa3aIDcWrlrsMJXIJeHINmWK0NPbvCMEkp3BpIeZw",cvId: '3',cZone: 'fakestoreapi.com',fa:"/products?__cf_chl_f_tk=bW1OSoRugeMXD.Lp9.SAWSBKoxLkr4vmtcLTUFZrpDw-1778440878-1.0.1.1-bcDa3aIDcWrlrsMJXIJeHINmWK0NPbvCMEkp3BpIeZw",md: '09U.UE.iHA.TMsIFBbTk6oCykhzBRIt96LGjU.iME2k-1778440878-1.2.1.1-A0J15wWDFF_oQUGfyzT_2tbcyFDirzbJ9RuSB2NU1k2wasC.QRp8Hlku34y1sGGbxZ3dzV0dF_ZCZiBqj.YMUuk89CgMtrI2dtkFJ_YwReSrkYrFI7RncChuD0GaEgjGR1gdkUh12W7veCzPkm3pyR.JmNA2OY0.soxjH69pd5e3c.ZSN4X.8CuLD_EZQCMVUcx.bM4CgHVignw2kRDF0G3UuzKlmeeStNlF4lHAIHmBhmbzn.Z87K6qBQGxF2V3Ue6Qnynbh76E0dAemrysHQX.SS_CXHlBQ5oJ7arVpmiDLSI67Qn2hQOkmRaw20RGXRlAwR1FuINCQyRUx2mfj8AFNd7gJA2.wLXScfAz33IkoqFiOlT5ZWfXuK48QWqn.I0EKK2qe6IOkNII2ZjsIYxodoWa80Jsm5BwXavNwsec53MEEuc4PZQqTm1epis7Rait6Np4CVTC39NAARAZHnPeQQ6cR2Rz_Fwu.JvFTV.kO3xTy7YlIbanvLS_twgSp8QWAc_y86mUW2Wx7tbtwNLlSti_r3JxTOA8hbiU9kYwfBa.mhs4N4xGfoGGGR.f0w5sfK88hVmMFAMP4F.W1cbUX8YEfdvW9HtROniOZ9V5jw599cwCwO5X4g8zGDxsmy7xHoZI5tBDXfo4WJ1x2bTepeDOxyw1JRzD0q8BgrR6T6e_0QPSfqls_lX8xYn_Ot0GmrESltNvWzXY19aAIFcWGay91xHxQ5pCeIgQybH0kCunKUxErYQXTJrcEWy5eoBVRqmGEj37IoFtVkYPJcCzxTAGDutx9sm_va1SE_hYSl8ag0K3HHKfF1x0HfmuS71DeMM3NxnYKm6DHBCFbhnbUk6yIjTebK0UhkcaorAR9KGvWWbwR6eLdWJKqJ53',mdrd: 'x2I1CMOj589TYGMbxX30dDQq8DiFwRe9gP4zbjaBX1o-1778440878-1.2.1.1-ufap4B9P2fi6NVPynCbxjfCb.jJ73wmZdCO50TGoxl_MTwA.llBm3HSY69EOxjdJNGxDCnsfUBHMrHoqUaxSLrN9W0_anQH8LWn.edXdo3gjTWWHW.suSuKPNxVwTWERguhsgsXYlh1wpIPEJ0OfChET6FWeu1E9AswqbD8EWg65U.MDtSKsnxYFEY9L05Nl86k253tbpGBdCkvfFXoR.c9q15Jv49tPgFhB2N7VhIGnYz.cvdZIadh7XqQBrpTtO1nV2.wFJtvNGt1pkGzTlRRjAq5ZGTNg8mbpSWo_Kunz174WnHYhcs3PoiVMMaxfEBfCJYJIwbxK8QdOh673qFNz9sEFRGoLxfoBW31D7Ns',};var a = document.createElement('script');a.nonce = '4j8eDSlSuUhLVQB0kVLoOU';a.src = '/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=9f9b4e63595cd301';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,"/products?__cf_chl_rt_tk=bW1OSoRugeMXD.Lp9.SAWSBKoxLkr4vmtcLTUFZrpDw-1778440878-1.0.1.1-bcDa3aIDcWrlrsMJXIJeHINmWK0NPbvCMEkp3BpIeZw"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script></body></html>
+    at FakeStoreAPI.validateAndParse (/home/runner/work/mvideo-interview-ts-playwright/mvideo-interview-ts-playwright/api/Base.api.ts:36:13)
+    at FakeStoreAPI.get (/home/runner/work/mvideo-interview-ts-playwright/mvideo-interview-ts-playwright/api/Base.api.ts:21:12)
+    at FakeStoreAPI.getProducts (/home/runner/work/mvideo-interview-ts-playwright/mvideo-interview-ts-playwright/api/FakeStore.api.ts:16:22)
+    at /home/runner/work/mvideo-interview-ts-playwright/mvideo-interview-ts-playwright/tests/api/fakestore/post.products.spec.ts:19:18
+```
+
+# Test source
+
+```ts
+   1 | import type { APIRequestContext, APIResponse } from '@playwright/test';
+   2 |
+   3 | export class BaseAPI {
+   4 |   readonly request: APIRequestContext;
+   5 |   readonly token?: string;
+   6 |
+   7 |   constructor(request: APIRequestContext, token?: string) {
+   8 |     this.request = request;
+   9 |     this.token = token;
+  10 |   }
+  11 |
+  12 |   async get<T = unknown>(endpoint: string, expectedStatus = 200, options: Record<string, unknown> = {}): Promise<{ status: number; body: T }> {
+  13 |     const mergedOptions = {
+  14 |       ...options,
+  15 |       headers: {
+  16 |         ...(options.headers as Record<string, string> ?? {}),
+  17 |         ...(this.token && { Authorization: `Bearer ${this.token}` }),
+  18 |       },
+  19 |     };
+  20 |     const response = await this.request.get(endpoint, mergedOptions);
+  21 |     return await this.validateAndParse<T>(response, expectedStatus);
+  22 |   }
+  23 |
+  24 |   async post<T = unknown>(endpoint: string, expectedStatus = 200, options: Record<string, unknown> = {}): Promise<{ status: number; body: T }> {
+  25 |     const response = await this.request.post(endpoint, options);
+  26 |     return await this.validateAndParse<T>(response, expectedStatus);
+  27 |   }
+  28 |
+  29 |   /**
+  30 |    * Validates the response status code and parses the body as JSON or text.
+  31 |    */
+  32 |   async validateAndParse<T = unknown>(response: APIResponse, expectedStatus = 200): Promise<{ status: number; body: T }> {
+  33 |     // 1. Check the status code first
+  34 |     if (response.status() !== expectedStatus) {
+  35 |       const errorBody = await response.text();
+> 36 |       throw new Error(`Status Mismatch! Expected ${expectedStatus} but got ${response.status()}.\nResponse: ${errorBody}`);
+     |             ^ Error: Status Mismatch! Expected 200 but got 403.
+  37 |     }
+  38 |
+  39 |     // 2. Attempt to parse as JSON, fallback to text if it fails
+  40 |     let body: T;
+  41 |     try {
+  42 |       body = await response.json() as T;
+  43 |     } catch {
+  44 |       body = await response.text() as unknown as T;
+  45 |     }
+  46 |
+  47 |     return {
+  48 |       status: response.status(),
+  49 |       body: body,
+  50 |     };
+  51 |   }
+  52 | }
+  53 |
+```
