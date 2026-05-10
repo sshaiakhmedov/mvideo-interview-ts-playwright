@@ -68,6 +68,7 @@ test.describe('Search and add Item to the cart', () => {
     test('API mocking returns 0 items for "Робот пылесос" query and shows no results message', async ({
       mvideoSearch,
     }) => {
+      // ! Can to be replaced by MSW
       await mvideoSearch.page.route('/bff/products', async (route) => {
         await route.fulfill({
           status: 204,

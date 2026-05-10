@@ -19,7 +19,7 @@ const config: PlaywrightTestConfig = {
   // Use multiple reporters
   reporter: [
     ['list'], // Shows test statistics in the terminal
-    ['allure-playwright'], // Keeps generating Allure reports
+    ['allure-playwright', { detail: true }], // Keeps generating Allure reports with detailed steps
     ['html', { open: 'never' }], // The default Playwright HTML report
   ],
 
@@ -30,6 +30,7 @@ const config: PlaywrightTestConfig = {
     ignoreHTTPSErrors: true,
     video: 'on-first-retry',
     screenshot: 'only-on-failure',
+    trace: 'retain-on-failure',
   },
   retries: process.env.CI ? 2 : 0,
 
@@ -46,6 +47,9 @@ const config: PlaywrightTestConfig = {
         navigationTimeout: 15000,
         actionTimeout: 15000,
         ...devices['Desktop Chrome'], // add wright userAgent
+        // viewport: process.env.CI ? { width: 1920, height: 1080 } : null,
+        // deviceScaleFactor: undefined,
+        // hasTouch: process.env.CI ? true : false,
         launchOptions: {
           args: ['--disable-blink-features=AutomationControlled', '--start-maximized'],
         },

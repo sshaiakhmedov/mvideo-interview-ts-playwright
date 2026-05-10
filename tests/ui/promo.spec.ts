@@ -7,13 +7,10 @@ test.describe('Promo', () => {
     });
   });
 
-  test('Verify Promo page opens on the same tab with correct theme', async ({ mvideoHome }) => {
-    await test.step('Click the promo banner', async () => {
-      await mvideoHome.promo.click();
-    });
-
-    await test.step('Verify navigation to the promo page', async () => {
-      await expect(mvideoHome.page).toHaveURL('/promo/skidka-klienta?from=hb');
-    });
+  test('Verify Promo page opens on the same tab with correct theme @prp', async ({ mvideoHome }) => {
+    const promoHref = (await mvideoHome.promo.link.getAttribute('href')) as string;
+    await mvideoHome.promo.image.click();
+    console.log(promoHref);
+    await expect(mvideoHome.page).toHaveURL(promoHref);
   });
 });

@@ -56,8 +56,12 @@ export class MvideoHome extends Base {
     return this.page.getByRole('button', { name: 'Каталог' });
   }
 
-  get promo(): Locator {
-    return this.page.getByRole('img', { name: 'Скидка клиента до -90%' });
+  get promo() {
+    const link = this.page.locator('a', { has: this.page.getByRole('img', { name: 'Майквидация со скидками до 70%' }) });
+    return {
+      link,
+      image: link.getByRole('img', { name: 'Майквидация со скидками до 70%' }),
+    };
   }
 
   // ── Top Bar ──
@@ -93,7 +97,7 @@ export class MvideoHome extends Base {
     // Location confirmation
     const locationBtn = this.locationConfirmation.confirmButton;
     try {
-      await locationBtn.waitFor({ state: 'visible', timeout: 3000 });
+      await locationBtn.waitFor({ state: 'visible', timeout: 8000 });
       await locationBtn.click();
     } catch (e) {
       // Not visible or already dismissed
