@@ -1,6 +1,8 @@
 import { test, expect } from '../../util/fixtures';
 
 test.describe('Promo', () => {
+  test.skip(!!process.env.CI, 'Skipped on CI due to Mvideo anti-bot protections blocking datacenter IPs.');
+
   test.beforeEach('Go to landing page', async ({ mvideoHome }) => {
     await test.step('Open Mvideo Home Page', async () => {
       await mvideoHome.open();

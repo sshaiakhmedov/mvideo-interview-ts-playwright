@@ -1,6 +1,8 @@
 import { test, expect } from '../../util/fixtures';
 
 test.describe('Mvideo Landing Page — Logged-Out User', () => {
+  test.skip(!!process.env.CI, 'Skipped on CI due to Mvideo anti-bot protections blocking datacenter IPs.');
+
   test.beforeEach('navigate to home page', async ({ mvideoHome }) => {
     await mvideoHome.open();
   });
