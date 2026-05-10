@@ -1,8 +1,9 @@
 import { test, expect } from '../../util/fixtures';
+import { skipOnCICD } from '../../util/helpers';
 import { SEARCH_QUERIES } from '../../data/mvideo.data';
 
 test.describe('Search and add Item to the cart', () => {
-  test.skip(!!process.env.CI, 'Skipped on CI due to Mvideo anti-bot protections blocking datacenter IPs.');
+  skipOnCICD('Skipped on CI due to Mvideo anti-bot protections blocking datacenter IPs.');
 
   test.beforeEach('navigate to home page', async ({ mvideoHome }) => {
     await mvideoHome.open();
