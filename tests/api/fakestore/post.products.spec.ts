@@ -1,8 +1,10 @@
 import { Product } from '../../../api/schemas/FakeStore.schema';
 import { test, expect } from '../../../util/fixtures';
 import { ProductSchema, ProductNegative } from '../../../api/schemas/FakeStore.schema';
+import { skipOnGitHubActions } from '../../../util/helpers';
 
 test.describe('POST /products', () => {
+  skipOnGitHubActions('Skipped on GitHub Actions because fakestoreapi.com rate-limits GitHub IPs.');
   let payload: Product;
   let productId1: Product;
 
