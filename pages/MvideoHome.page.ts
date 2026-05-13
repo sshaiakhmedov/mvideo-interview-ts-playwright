@@ -1,14 +1,17 @@
 import { Page, Locator, expect } from '@playwright/test';
 import { Base } from './Base.page';
 import { MvidTapBarComponent } from '../components/MvidTapBar.component';
+import { BottomNavBarComponent } from '../components/BottomNavBar.component';
 
 export class MvideoHome extends Base {
   readonly tapBar: MvidTapBarComponent;
+  readonly bottomNavBar: BottomNavBarComponent;
   protected readonly path = '/';
 
   constructor(page: Page) {
     super(page);
     this.tapBar = new MvidTapBarComponent(page);
+    this.bottomNavBar = new BottomNavBarComponent(page);
   }
 
   // ── First-Visit Modals ──
@@ -57,7 +60,9 @@ export class MvideoHome extends Base {
   }
 
   get promo() {
-    const link = this.page.locator('a', { has: this.page.getByRole('img', { name: 'Майквидация со скидками до 70%' }) });
+    const link = this.page.locator('a', {
+      has: this.page.getByRole('img', { name: 'Майквидация со скидками до 70%' }),
+    });
     return {
       link,
       image: link.getByRole('img', { name: 'Майквидация со скидками до 70%' }),

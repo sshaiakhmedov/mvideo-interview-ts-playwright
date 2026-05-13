@@ -1,12 +1,13 @@
 import { test as base, expect } from '@playwright/test';
 import { ApiManager } from '../api/ApiManager';
-import { MvideoHome, MvideoSearchResults, CartPage } from '../pages';
+import { MvideoHome, MvideoSearchResults, CartPage, AllPromotionsPage } from '../pages';
 
 type MyFixtures = {
   api: ApiManager;
   mvideoHome: MvideoHome;
   mvideoSearch: MvideoSearchResults;
   cartPage: CartPage;
+  allPromotionsPage: AllPromotionsPage;
 };
 
 const test = base.extend<MyFixtures>({
@@ -14,6 +15,10 @@ const test = base.extend<MyFixtures>({
   api: async ({ request }, use) => {
     const apiManager = new ApiManager(request);
     await use(apiManager);
+  },
+  allPromotionsPage: async ({ page }, use) => {
+    const allPromotionsPage = new AllPromotionsPage(page);
+    await use(allPromotionsPage);
   },
   cartPage: async ({ page }, use) => {
     const cartPage = new CartPage(page);
