@@ -28,4 +28,5 @@ This is a **Playwright test automation framework** (TypeScript, ESM) — there i
 - The `promo.spec.ts` test is fragile because it hardcodes a specific promotional banner name on the live mvideo.ru site. It may fail when the banner rotates — this is a known pre-existing issue, not an environment problem.
 - Pre-existing lint errors (4) and typecheck errors (2) exist in the codebase in `AllPromotions.page.ts`, `MvideoHome.page.ts`, `scripts/run-chrome-spec.mjs`, and `tests/api/fakestore/post.products.spec.ts`. These are not caused by environment setup.
 - The Husky pre-commit hook runs `lint-staged` + `typecheck` + optionally Playwright tests. Use `HUSKY_SKIP_PLAYWRIGHT=1 git commit ...` when committing non-test changes to avoid running the full suite on commit.
+- **Do NOT commit `package-lock.json` changes** caused by running `npm install` with a different npm version than the one that generated it. The original lockfile is v1 format; newer npm versions silently upgrade it to v3, which breaks `npm ci` in CI (Node 20). Use `npm ci` for clean installs to avoid modifying the lockfile.
 - No `.env` file is needed — `dotenv` is loaded but the config works without it.
