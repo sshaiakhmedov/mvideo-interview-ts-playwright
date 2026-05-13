@@ -92,14 +92,7 @@ export class MvideoHome extends Base {
     return this.categoryNav.getByRole('link', { name });
   }
 
-  // ── Methods ──
-
-  /**
-   * Dismiss all first-visit popups (location confirmation, cookie banner, promo banner).
-   * Each is handled gracefully — if it's not visible within a short timeout, it's skipped.
-   */
-  async dismissFirstVisitPopups(): Promise<void> {
-    // Location confirmation
+  async confirmLocationPopup(): Promise<void> {
     const locationBtn = this.locationConfirmation.confirmButton;
     try {
       await locationBtn.waitFor({ state: 'visible', timeout: 8000 });
@@ -107,8 +100,9 @@ export class MvideoHome extends Base {
     } catch (e) {
       // Not visible or already dismissed
     }
+  }
 
-    // Cookie banner
+  async dismissCookieBanner(): Promise<void> {
     const cookieBtn = this.cookieBanner.acceptButton;
     try {
       await cookieBtn.waitFor({ state: 'visible', timeout: 2000 });
@@ -116,8 +110,9 @@ export class MvideoHome extends Base {
     } catch (e) {
       // Not visible or already dismissed
     }
+  }
 
-    // Promo banner
+  async dismissPromoBanner(): Promise<void> {
     const promoClose = this.promoBanner.closeButton;
     try {
       await promoClose.waitFor({ state: 'visible', timeout: 2000 });
@@ -125,6 +120,16 @@ export class MvideoHome extends Base {
     } catch (e) {
       // Not visible or already dismissed
     }
+  }
+
+  /**
+   * Dismiss all first-visit popups (location confirmation, cookie banner, promo banner).
+   * Each is handled gracefully — if it's not visible within a short timeout, it's skipped.
+   */
+  async dismissFirstVisitPopups(): Promise<void> {
+    await this.confirmLocationPopup();
+    await this.dismissCookieBanner();
+    await this.dismissPromoBanner();
   }
 
   async pageIsLoaded(): Promise<void> {
