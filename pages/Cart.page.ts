@@ -25,4 +25,13 @@ export class CartPage extends Base {
   get cartItems(): Locator {
     return this.page.locator('.cart-items');
   }
+
+  get chat() {
+    const container = this.page.getByRole('button', { name: 'Чат' });
+    return {
+      container,
+      icon: container.locator('[type=chat]'),
+      label: container.locator('chat-title').getByText('Чат'),
+    };
+  }
 }

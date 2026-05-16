@@ -49,6 +49,14 @@ test.describe('Search and add Item to the cart', () => {
       await test.step('verify cart page has added item', async ({}) => {
         await expect(cartPage.cartItems).toContainText(cardItemName);
       });
+
+      await test.step('verify chat button is visible', async () => {
+        await expect(cartPage.chat.container).toBeVisible();
+      });
+
+      await test.step('verify chat button is clickable', async () => {
+        await cartPage.chat.container.click();
+      });
     });
 
     test('search input retains the query text', async ({ mvideoHome }) => {

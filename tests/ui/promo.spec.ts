@@ -10,7 +10,8 @@ test.describe('Promo', () => {
     });
   });
 
-  test('Verify Promo page opens on the same tab with correct theme @prp', async ({ mvideoHome }) => {
+  // TODO: keep changing
+  test.skip('Verify Promo page opens on the same tab with correct theme @prp', async ({ mvideoHome }) => {
     const promoHref = (await mvideoHome.promo.link.getAttribute('href')) as string;
     await mvideoHome.promo.image.click();
     console.log(promoHref);

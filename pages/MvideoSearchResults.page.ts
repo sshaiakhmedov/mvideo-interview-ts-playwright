@@ -62,14 +62,17 @@ export class MvideoSearchResults extends Base {
     };
   }
 
+  get searchInput(): Locator {
+    return this.page.getByPlaceholder('Поиск в М.Видео');
+  }
+
   // ── Methods ──
 
   /**
    * Perform search from the current page by typing into the search bar and pressing Enter.
    */
   async searchFor(query: string): Promise<void> {
-    const searchInput = this.page.getByPlaceholder('Поиск в М.Видео');
-    await searchInput.fill(query);
+    await this.searchInput.fill(query);
     await this.page.keyboard.press('Enter');
     await this.page.waitForLoadState('domcontentloaded');
   }
@@ -79,8 +82,8 @@ export class MvideoSearchResults extends Base {
    * The link name format is: "Открыть карточку товара <Product Name>"
    */
   async getProductName(index: number): Promise<string> {
-    const linkName
-      = (await this.productCardLink(index).getAttribute('aria-label')) ?? (await this.productCardLink(index).innerText());
+    const linkName =
+      (await this.productCardLink(index).getAttribute('aria-label')) ?? (await this.productCardLink(index).innerText());
 
     // Mvideo prepends this text for screen readers (accessibility); we remove it to get the clean product name.
     const screenReaderPrefix = /Открыть карточку товара\s*/i;
@@ -93,7 +96,7 @@ export class MvideoSearchResults extends Base {
   async isProductRelevant(index: number, searchQuery: string): Promise<boolean> {
     const productName = await this.getProductName(index);
     const keywordsArray = searchQuery.toLowerCase().split(' ');
-    return keywordsArray.some(keyword => productName.toLowerCase().includes(keyword));
+    return keywordsArray.some((keyword) => productName.toLowerCase().includes(keyword));
   }
 
   async pageIsLoaded(): Promise<void> {
